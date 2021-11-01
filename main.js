@@ -17,12 +17,40 @@ function invertiParola(str){
 */
 
 //PARI DISPARI
+//Richiesta di scelta all'utente
+const parDis = prompt('Scegli: Pari o Dispari');
+console.log(parDis);
+const userNumb = parseInt(prompt('Scegli: numero da 1 a 5'));
+console.log(userNumb);
 
-const pariDispari = prompt('scegli pari o dispari');
-const numeroUtente = prompt('scegli numero da 1 a 5');
-
-function numeroMacchina() {
-    numero = Math.round(Math.random() * 5)+1;
+//Creazione scelta pc
+function randomNumb() {
+  pcNumb = Math.round(Math.random()* 5) + 1;
+  return pcNumb;
 }
+let numbRand = randomNumb();
+console.log(randomNumb());
 
-let sommaNumeri = 
+//Verifica pari e dispari
+function pariDispari() {
+  let somma = userNumb + randomNumb();
+  if (somma % 2 == 0) {
+    alert('numero pari')
+  } else if (somma % 2 == 1) {
+    alert('numero dispari')
+  }
+  return somma;
+}
+let disPar = pariDispari();
+
+function vincitore() {
+  if (userNumb % 2 == 0) {
+    alert('utente vincitore')
+  } else if (userNumb % 2 == 1) {
+    alert('computer vincitore')
+  } else {
+    alert('avete pareggiato')
+  }
+  return;
+}
+let risFnale = vincitore();
